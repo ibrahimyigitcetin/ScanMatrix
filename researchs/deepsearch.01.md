@@ -1,12 +1,13 @@
 **Proje ve Hedefler ve Ozellikler:** 
 
 
-
-Bu proje, bir bilgisayar ağındaki yazılımcıları, ağ trafiği analiz aracı olan Wireshark kullanarak tespit etmeyi amaçlamaktadır. Temel hedef, yazılımcıların karakteristik ağ aktivitelerini (örneğin, Git/SSH kullanımı, IDE'ler ve kod editörlerinden kaynaklanan trafik, geliştirme/test sunucularına erişim, API test araçları trafiği, sanal makine/konteyner etkileşimleri ve özel port/protokol kullanımları) analiz ederek ayırt edici dijital izlerini belirlemektir. Proje kapsamında, bu özel trafik desenlerini etkin bir şekilde saptamak ve diğer ağ trafiğinden ayrıştırmak amacıyla hem canlı veri yakalama aşamasında (capture filters) hem de yakalanmış verilerin incelenmesi sırasında (display filters) kullanılacak kapsamlı ve özelleştirilmiş Wireshark filtreleri oluşturulacaktır. Bu filtreler, yazılımcılara özgü uygulamaların, servislerin ve davranış kalıplarının tespiti üzerine yoğunlaşarak, ağ üzerindeki yazılımcı varlığını ve faaliyetlerini yüksek doğrulukla belirlemeyi hedeflemektedir.
-
+ScanMatrix Bu Python tabanlı ağ güvenliği aracı, ağ tarama ve analiz süreçlerini otomatikleştiren, kapsamlı ve kullanıcı dostu bir çözümdür. Araç, açık port tarama, banner grabbing, sistem ve versiyon bilgisi toplama, TCPdump benzeri ağ trafiği analizi ve CVE veritabanından güvenlik açığı tarama gibi özellikler sunar. Grafana tarzı görselleştirme ile veriler düzenli ve görsel olarak sunulurken, sistem güvenilirliğini low, medium, high, critical olarak derecelendirir. MAC adresi tespiti ve ilk 6 hanesinden hizmet türü belirleme, firewall varlığı kontrolü ve proxy listeleriyle firewall bypass yetenekleri içerir. Gerçek zamanlı monitör ve uyarı sistemi ile ağ trafiğini gelişmiş görselleştirme araçlarıyla izler. Esnek, güvenli ve kullanıcı odaklı bu araç, ağ güvenliği analizlerini kolaylaştırır ve potansiyel tehditleri proaktif bir şekilde tespit eder.
 
 
-**Görev:** 2025 yılı için [Developer Hunter, 'wireshark kullanarak yazilimcilari agda tesbit etmek (Yazilimci Avi)'] alanındaki en son ve en etkili ilk 10 tekniği/trendi derinlemesine araştır ve belirle.
+
+
+
+**Görev:** 2025 yılı için [Host Scan ] Z, örneğin: nmap benzeri araç kullanarak sistemde çık olan portları bulma firewall tespiti mac adresi tespiti firewall bypass teknikleri gibi en son ve en etkili ilk 10 tekniği/trendi derinlemesine araştır ve belirle.
 
 
 
@@ -42,10 +43,10 @@ Bu proje, bir bilgisayar ağındaki yazılımcıları, ağ trafiği analiz arac�
 
 - Yazılım Geliştirme Metodolojileri
 
-- Veri Bilimi ve Makine Öğrenimi Uygulamaları
+- Firewall yönetimindeki sorun çözme yöntemleri
 
-- Blokzincir Teknolojileri
+- IDS/IPS sistemleri
 
-- Dijital Pazarlama Stratejileri
+- Ağ güvenliği
 
 - İnsan-Bilgisayar Etkileşimi Arayüzleri
