@@ -39,7 +39,7 @@ ScanMatrix Bu Python tabanlı ağ güvenliği aracı, ağ tarama ve analiz sür
 
 
 
-**Örnek Alanlar (Projenize Göre Değiştirin):**
+**Örnek Alanlar:**
 
 - Yazılım Geliştirme Metodolojileri
 
