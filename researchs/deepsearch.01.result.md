@@ -2,81 +2,103 @@
 
 Günümüzün hızla gelişen dijital ortamında, siber güvenlik tehditleri giderek daha karmaşık ve yaygın hale gelmektedir. Ağ güvenliği araçları, potansiyel tehditleri proaktif bir şekilde tespit etmek ve analiz süreçlerini otomatikleştirmek için hayati bir rol oynamaktadır. Bu rapor, 2025 yılı için host tarama, güvenlik duvarı tespiti, MAC adresi belirleme ve güvenlik duvarı atlatma teknikleri alanındaki en son ve en etkili on trendi derinlemesine incelemektedir. Bu tekniklerin her biri, ağ güvenliği analizlerini kolaylaştıran ve sistem güvenilirliğini değerlendiren Python tabanlı bir ağ güvenliği aracı olan ScanMatrix gibi çözümlerin gelecekteki gelişimine yön verecek önemli bilgiler sunmaktadır.
 
-## **2025 Yılında Öne Çıkan Ağ Güvenliği Teknikleri ve Trendleri**
+# 2025 için En İyi 10 Host Tarama Tekniği ve Trendi
 
-### **1\. Yapay Zeka Destekli Akıllı Keşif ve Adaptif Tarama**
+## 1. Donanım Hızlandırmalı Port Tarama
+**Açıklama:** Data Plane Development Kit (DPDK) gibi teknolojiler kullanılarak port tarama hızı ve verimliliği artırılır.  
+**Neden Önemli:** Geleneksel tarama yöntemleri büyük ağlarda yetersiz kalabilir. Donanım hızlandırmalı tarama saniyede 120 milyon paket (Mpps) tarama hızına ulaşabilir ve %99,5 doğruluk sunar.  
+**2025 Etkileri ve Uygulama Alanları:** IoT ve bulut tabanlı ağlarda, özellikle veri merkezleri ve akıllı şehirlerde kritik rol oynar.  
+**Kaynak:** *Enhancing Network Visibility and Security with Advanced Port Scanning Techniques (2025)*
 
-Yapay zeka (YZ) ve makine öğrenimi (ML), 2025 yılında siber güvenlik ortamını hem saldırganlar hem de savunmacılar için dönüştürmektedir. Saldırganlar, YZ'yi ağları taramak, güvenlik açıklarını belirlemek ve saldırıları dakikalar içinde gerçekleştirmek için kullanmaktadır.1 YZ destekli sızma testi botları, savunmaları analiz edebilir ve hassas saldırılar başlatabilir.2 Bu durum, geleneksel host tarama yöntemlerinin YZ güdümlü botlara karşı daha az etkili olabileceği anlamına gelmektedir, çünkü bu botlar zayıflıkları akıllıca tanımlayabilir ve savunmaları atlatmak için tarama tekniklerini dinamik olarak ayarlayabilir.2
+---
 
-Bu teknoloji, saldırganların karmaşık saldırı vektörlerini otomatikleştirmesine, güvenlik açıklarını büyük ölçekte avlamasına ve siber saldırılar sırasında mesajlaşmayı dinamik olarak uyarlamasına olanak tanımaktadır.3 YZ destekli sıfır gün avlama araçları, daha az deneyimli saldırganlar için bile istismarları erişilebilir kılabilir, bu da genel tehdit seviyesini artırmaktadır.3 Bu durum, savunma tarafında YZ destekli güvenlik çözümlerine yatırım yapma gerekliliğini ortaya koymaktadır. ScanMatrix gibi araçların, YZ tabanlı davranışsal analiz yeteneklerini entegre ederek normal ağ davranışının temelini oluşturması ve gizli keşif faaliyetlerini gösteren ince sapmaları işaretlemesi hayati önem taşımaktadır. Bu, güvenlik güvenilirlik derecelendirmesini daha incelikli bir tehdit değerlendirmesi sağlayarak artıracaktır.
+## 2. Gelişmiş Firewall Atlatma Teknikleri
+**Açıklama:** Paket parçalama, TTL manipülasyonu ve özel TCP bayrakları (Null, Xmas, Ack) kullanılarak IDS/IPS sistemleri atlatılır.  
+**Neden Önemli:** Gelişmiş firewall'lar karşısında gizli tarama için önemlidir.  
+**2025 Etkileri ve Uygulama Alanları:** Devlet destekli saldırılarda ve gizli sızma testlerinde kullanılacaktır.  
+**Kaynak:** *Advance NMAP Scanning Techniques in 2025 (2025)*
 
-### **2\. Gizli ve Kaçınmacı Port Tarama Teknikleri**
+---
 
-Gizli port tarama, hedef sistem tarafından tespit edilme olasılığını azaltırken açık portları belirlemeye yardımcı olan kritik bir siber güvenlik tekniğidir.4 Geleneksel TCP bağlantısının üç aşamalı el sıkışmasından kaçınan SYN taraması (-sS), bu alandaki popüler bir yöntemdir.4 Tam bir bağlantı kurmadığı için daha az müdahalecidir ve hedef sistem tarafından fark edilme veya uyarıları tetikleme olasılığı daha düşüktür.4 Bir diğer gelişmiş teknik olan Idle Scan (Zombie Scan olarak da bilinir), tarayıcının kimliğini başka bir hostun arkasına gizleyerek tarama yapmasına olanak tanır.4 Bu, hedef sistemin IP ID dizisi artışını izleyerek bir portun açık olup olmadığını belirler.4
+## 3. Gizli Tarama ile Boşta Olan Host Kullanımı
+**Açıklama:** Idle scanning, bir “zombie” host üzerinden tarama yaparak iz bırakmadan bilgi toplar.  
+**Neden Önemli:** Tespit edilmeden bilgi toplamak için idealdir.  
+**2025 Etkileri ve Uygulama Alanları:** Gizlilik gerektiren testlerde ve istihbarat toplamada kritik öneme sahiptir.  
+**Kaynak:** *Advanced Nmap Scanning Techniques (2024)*
 
-Bu tekniklerin önemi, saldırganların güvenlik duvarları ve Saldırı Tespit Sistemleri (IDS) gibi savunma mekanizmalarını atlatma çabalarından kaynaklanmaktadır.5 Paketleri daha küçük parçalara bölmek (parçalama \-f) veya sahte tarama trafiğini taklit IP'lerden göndermek (decoy tarama \-D) gibi kaçınma teknikleri, tespit sistemlerinin gerçek aktiviteyi tespit etmesini zorlaştırmaktadır.5 Bu durum, güvenlik sistemlerinin basit imza eşleşmelerine veya tam bağlantı kayıtlarına dayanmasının yetersiz kalmasına yol açmaktadır.4 ScanMatrix'in, hem etik testler için bu gizli taramaları gerçekleştirebilmesi hem de kendi ağını izlerken bunları tespit edebilmesi gerekmektedir. Bu, ScanMatrix'in "gerçek zamanlı izleme ve uyarı sistemi"nin, davranışsal analiz ve makine öğrenimi modellerini kullanarak ağdaki anormallikleri ve gizli keşif girişimlerini belirlemesini gerektirmektedir.
+---
 
-### **3\. Kapsamlı Saldırı Yüzeyi Yönetimi ve Sürekli Güvenlik Açığı Değerlendirmesi**
+## 4. Kapsamlı Hizmet ve OS Parmak İzi Belirleme
+**Açıklama:** `-sV` ve `-O` gibi seçeneklerle servis ve işletim sistemi bilgileri toplanır.  
+**Neden Önemli:** Hedef sistemin profilini çıkarmak için gereklidir.  
+**2025 Etkileri ve Uygulama Alanları:** AI destekli analizlerle daha hızlı sonuç elde edilir.  
+**Kaynak:** *Advance NMAP Scanning Techniques in 2025 (2025)*
 
-2025'te siber güvenlik, periyodik güvenlik açığı taramalarından, bir kuruluşun tüm saldırı yüzeyinin sürekli ve kapsamlı yönetimine doğru bir kayma yaşamaktadır.7 Bu kayma, bulut altyapılarının, Nesnelerin İnterneti (IoT) cihazlarının ve üçüncü taraf uygulamalarının artan kullanımıyla genişleyen saldırı yüzeyinden kaynaklanmaktadır.3 Yanlış yapılandırmalar (örneğin, açık portlar, varsayılan kimlik bilgileri, segmentlere ayrılmamış ağlar, güncel olmayan yazılımlar ve yanlış yapılandırılmış güvenlik duvarları) "sessiz katiller" olarak tanımlanmakta ve çoğu zaman sıfır gün güvenlik açıkları olmamalarına rağmen kolayca istismar edilebilmektedir.7
+---
 
-Bu durum, geleneksel, periyodik güvenlik açığı taramalarının (yalnızca bilinen CVE'lere odaklanan) yetersiz kalmasına neden olmaktadır, çünkü bu taramalar yanlış yapılandırmaların dinamik doğasını ve yeni eklenen, yönetilmeyen varlıkları ("gölge IoT" cihazları gibi) gözden kaçırmaktadır.9 Bu nedenle, sürekli ve bütünsel izleme ihtiyacı ortaya çıkmaktadır. Bulut Güvenlik Durumu Yönetimi (CSPM) araçları, bulut yapılandırmalarını en iyi uygulamalara ve uyumluluk standartlarına göre sürekli olarak izleyerek yanlış yapılandırmaları otomatik olarak tespit edip düzeltmektedir.11 Benzer şekilde, IoT güvenlik denetimleri donanım, yazılım, iletişim protokolleri ve kullanıcı erişimini kapsamakta, davranışsal anomali tespiti de dahil olmak üzere kapsamlı bir yaklaşım sunmaktadır.9 Verizon'ın araştırmasına göre veri ihlallerinin %20'sinden fazlası yanlış yapılandırmalardan kaynaklanmaktadır ve CSPM gibi proaktif araçlar ihlalleri %60 oranında azaltabilmektedir.11 ScanMatrix'in, mevcut port tarama ve CVE veritabanı özelliklerini sürekli varlık keşfi, bulut ve IoT için yanlış yapılandırma tespiti ve YZ destekli risk önceliklendirme ile entegre ederek bir "Saldırı Yüzeyi Yönetimi" platformuna dönüşmesi gerekmektedir. Bu, aracın güvenlik derecelendirme sisteminin, tespit edilen güvenlik açıklarına ek olarak, tüm saldırı yüzeyine dayalı daha doğru ve gerçek zamanlı bir duruş sağlamasına olanak tanıyacaktır.
+## 5. AI Destekli Anormalliğe Dayalı Tespit
+**Açıklama:** Yapay zeka ile ağ trafiğinde anormal davranışlar tespit edilir.  
+**Neden Önemli:** Geleneksel yöntemlerin kaçırabileceği tehditleri yakalar.  
+**2025 Etkileri ve Uygulama Alanları:** IoT ve bulut altyapılarında standart hale gelir.  
+**Kaynak:** *20 Emerging Cybersecurity Trends to Watch Out in 2025 (2025)*
 
-### **4\. Gelişmiş MAC Adresi Tespiti ve Cihaz Parmak İzi Çıkarma**
+---
 
-MAC adresi tespiti ve cihaz parmak izi çıkarma teknikleri, ağ gizliliğini ve keşfini anlamak için hayati öneme sahiptir, çünkü temel anonimleştirme girişimleri (MAC adresi sahtekarlığı gibi) kullanıldığında bile cihazların tanımlanmasına ve izlenmesine olanak tanır.16 MAC adresi sahtekarlığı, bir cihazın MAC adresini ağdaki başka bir cihazınkini taklit etmek üzere değiştirmesidir.17 Bu, ağ erişim kısıtlamalarını aşmak veya yetkisiz erişim elde etmek için kullanılabilir.17
+## 6. Bulut Tabanlı Tarama Araçları
+**Açıklama:** Sanal makineler ve konteynerler gibi kaynaklara özel tarama araçları geliştirilir.  
+**Neden Önemli:** Bulut ağları için optimize edilmiş çözümler sunar.  
+**2025 Etkileri ve Uygulama Alanları:** SASE mimarileriyle birlikte kullanımı artar.  
+**Kaynak:** *8 Trends Reshaping Network Security in 2025 (2024)*
 
-Gelişmiş tespit yöntemleri, yalnızca MAC adresi karşılaştırmalarının ötesine geçerek cihaz parmak izi verilerini kullanır.19 Bu veriler, cihazın MAC adresini ve işletim sistemi, yazılım, cihaz modeli gibi bir veya daha fazla özelliğini içerir.19 Pasif taramalar (normal trafikten veri toplama) ve aktif taramalar (bir yanıtı tetiklemek için mesaj gönderme) birleştirilerek bu parmak izi verileri oluşturulur ve güncellenir.19 Bu, MAC adresi sahtekarlığının doğru bir şekilde belirlenmesine ve yazılım güncellemeleri gibi meşru değişikliklerden kaynaklanan yanlış pozitiflerin azaltılmasına yardımcı olur.19 Güven skoru ve kullanım istatistikleri (eşzamanlı kullanım veya aynı ağda kullanım gibi) da tespitin doğruluğunu artırır.19 ScanMatrix'in MAC adresi tespiti yeteneği, OUI (Organizationally Unique Identifier) tabanlı tanımlamanın ötesine geçerek, cihazın davranışsal özelliklerini (TCP/IP yığını farklılıkları, saat kayması, paket zamanlaması, Wi-Fi prob istekleri) analiz eden gelişmiş parmak izi tekniklerini içermelidir.16 Bu, ScanMatrix'in ağdaki cihazları daha doğru bir şekilde tanımlamasını ve MAC adresi sahtekarlığı girişimlerini tespit etmesini sağlayacaktır.
+---
 
-### **5\. Yeni Nesil Güvenlik Duvarı (NGFW) ve Web Uygulama Güvenlik Duvarı (WAF) Parmak İzi Çıkarma ve Atlatma**
+## 7. IoT Cihaz Tarama Optimizasyonu
+**Açıklama:** IoT cihazlarını paralel ve optimize algoritmalarla tarama.  
+**Neden Önemli:** Zayıf güvenliğe sahip bu cihazların tespiti büyük önem taşır.  
+**2025 Etkileri ve Uygulama Alanları:** Akıllı şehir ve altyapı sistemleri için gereklidir.  
+**Kaynak:** *5 Top Networking Trends (2024 & 2025) (2024)*
 
-2025 yılında, Yeni Nesil Güvenlik Duvarları (NGFW'ler) ve Web Uygulama Güvenlik Duvarları (WAF'ler), Yapay Zeka (YZ) ve Makine Öğrenimi (ML) teknolojilerini kullanarak tehditleri tespit etme ve tanımlama yeteneklerini önemli ölçüde geliştirmektedir.21 Bu teknolojiler, sıfır gün tehditlerinin hassas bir şekilde tespit edilmesini ve engellenmesini sağlamakta, trafik analizi ve anomali tespiti gibi kritik görevleri otomatikleştirmektedir.21 WAF'ler, SQL enjeksiyonu, siteler arası komut çalıştırma (XSS) ve DDoS saldırıları gibi uygulama katmanı tehditlerine karşı koruma sağlarken, YZ/ML entegrasyonu ile davranışsal analizi kullanarak normal site etkileşimleri için bir temel oluşturur.22 Anormal davranışlar (örneğin, hızlı site etkileşimleri veya otomatik form gönderimleri) tespit edildiğinde, WAF şüpheli aktiviteyi işaretleyebilir veya bir CAPTCHA gibi bir doğrulama isteği gönderebilir.23
+---
 
-Saldırganlar, güvenlik duvarlarını atlatmak için HTTP parmak izi çıkarma gibi teknikleri kullanmaktadır.25 Bu, HTTP sunucuları ve bunlarla ilişkili programlama dilleri, çerçeveler, proxy'ler ve WAF'ler hakkında bilgi toplamayı içerir.25 HTTP yanıt başlıkları (Server, X-Powered-By gibi) veya özel başlıklar aracılığıyla teknoloji yığını ve yazılım sürümleri hakkında ipuçları elde edilebilir.25 Bu bilgiler, bilinen güvenlik açıklarını veya yanlış yapılandırmaları ortaya çıkararak saldırı stratejilerini daha hedefli hale getirir.25 ScanMatrix'in, hem NGFW/WAF varlığını ve yapılandırmasını tespit etmek için gelişmiş parmak izi çıkarma yeteneklerini (derin paket denetimi ve davranışsal analiz dahil) kullanması hem de bu güvenlik duvarlarını atlatmaya yönelik potansiyel zayıflıkları belirlemesi gerekmektedir.23 Bu, ScanMatrix'in güvenlik duvarı tespit yeteneklerini güçlendirecek ve potansiyel atlatma vektörlerini proaktif olarak belirlemesine yardımcı olacaktır.
+## 8. Sıfır Güven Temelli Sürekli Doğrulama
+**Açıklama:** Her kullanıcı ve cihaz sürekli doğrulama ile kontrol altında tutulur.  
+**Neden Önemli:** İç tehditleri azaltır, güvenlik modelini güçlendirir.  
+**2025 Etkileri ve Uygulama Alanları:** Kurum içi tarama standart hale gelir.  
+**Kaynak:** *20 Emerging Cybersecurity Trends to Watch Out in 2025 (2025)*
 
-### **6\. Tünelleme ve Protokol Manipülasyonu ile Güvenlik Duvarı Atlatma**
+---
 
-Güvenlik duvarı atlatma teknikleri, saldırganların güvenlik duvarlarının ağ protokollerini uç nokta sistemlerinden farklı yorumlama ve işleme şekillerini istismar etmesini içermektedir.27 Bu, güvenlik duvarlarının tam olarak incelemediği veya anlamadığı daha yüksek seviyeli protokollerden faydalanmayı, kötü niyetli içeriği meşru trafikte gizlemek için şifreleme ve gizleme yöntemlerini kullanmayı veya yasaklanmış trafiği izin verilen protokoller içinde kapsüllemeyi (tünelleme) içerebilir.27
+## 9. Otomatikleştirilmiş Güvenlik Açığı Değerlendirmesi
+**Açıklama:** Güvenlik açıkları otomatik araçlarla analiz edilir ve önceliklendirilir.  
+**Neden Önemli:** Büyük ağlarda manuel tarama yetersizdir.  
+**2025 Etkileri ve Uygulama Alanları:** AI destekli otomasyon yaygınlaşacak.  
+**Kaynak:** *Top 10 Network Scanning Tools for 2025 (2024)*
 
-HTTP/HTTPS tünelleme, verileri özel HTTP başlıklarında gizleyerek, URI parametrelerini kodlayarak veya POST gövdelerine tam protokol akışlarını kapsülleyerek yaygın olarak kullanılmaktadır.27 Saldırganlar, meşru web trafiği desenlerini taklit ederek, geçerli kullanıcı aracıları kullanarak ve istekleri normal insan tarama davranışlarına uyacak şekilde zamanlayarak tespit edilmekten kaçınmaya çalışırlar.27 ICMP tünelleme de bir başka etkili yöntemdir, çünkü ICMP yankı paketleri rastgele veriler içerebilir ve birçok güvenlik duvarı ICMP paket içeriklerini derinlemesine incelemez.27 Bu teknikler, güvenlik duvarı kurallarının optimizasyonunu ve protokol uyumluluk kurallarının sıkı bir şekilde uygulanmasını gerektirmektedir.27 ScanMatrix'in, bu tür tünelleme ve protokol manipülasyon tekniklerini tespit etme yeteneğini geliştirmesi gerekmektedir. Bu, derin paket denetimi, anormal trafik desenlerini belirlemek için YZ/ML kullanımı ve potansiyel gizli kanalları ortaya çıkarmak için davranışsal analiz içermelidir.
+---
 
-### **7\. Nesnelerin İnterneti (IoT) Cihaz Güvenlik Tarama ve Kimlik Doğrulama**
+## 10. Gerçek Zamanlı Tehdit İstihbaratı Entegrasyonu
+**Açıklama:** Tarama araçları, gerçek zamanlı CVE ve tehdit verileriyle entegre çalışır.  
+**Neden Önemli:** Güncel tehditleri tespit etmeyi sağlar.  
+**2025 Etkileri ve Uygulama Alanları:** Devlet destekli saldırılar ve sıfır gün açıklarına karşı proaktif savunma sağlar.  
+**Kaynak:** *8 Trends Reshaping Network Security in 2025 (2024)*
 
-2025 yılına kadar 30 milyardan fazla IoT cihazının ağlara bağlanması beklenirken, bu cihazlar geniş bir saldırı yüzeyi sunmaktadır.9 IoT cihazları genellikle sınırlı kaynaklarla tasarlanır ve yerel güvenlik özelliklerinden yoksundur, bu da onları siber saldırılar için cazip hedefler haline getirir.10 IoT kötü amaçlı yazılım saldırıları 2023'ten 2024'e %45 artış göstermiştir.28 Etkili bir IoT güvenlik denetimi, donanım, yazılım, iletişim protokolleri, kullanıcı erişimi ve bulut bağlantılarını kapsayan kapsamlı bir taramayı içerir.9
+---
 
-Bu denetimler, açık portlar, zayıf veya varsayılan parolalar, güncel olmayan bellenim ve bilinen CVE'ler için otomatik tarama yapmayı içerir.9 Ayrıca, cihazların en iyi güvenlik uygulamalarını (güçlü parolalar, şifreli iletişim, sınırlı erişim ayrıcalıkları) kullanıp kullanmadığını kontrol eden yapılandırma incelemelerini de içerir.9 Görünürlük, IoT güvenliğinin temelidir; pasif keşifler (ağ trafiği analizi, DHCP/DNS/ARP günlükleri) ve makine öğrenimi tabanlı davranış imzaları kullanılarak dinamik varlık haritaları oluşturulur.10 ScanMatrix'in, IoT cihazlarına yönelik özel güvenlik açığı tarama yeteneklerini (bellenim analizi, YZ destekli anomali tespiti, kimlik doğrulama kontrolleri) entegre etmesi gerekmektedir.9 Bu, ScanMatrix'in IoT ekosistemindeki zayıflıkları proaktif olarak belirlemesini ve ağ güvenilirliğini artırmasını sağlayacaktır.
+## ScanMatrix ile Entegrasyon Önerileri
 
-### **8\. API Güvenlik Taraması ve Gölge API Keşfi**
+ScanMatrix’in mevcut özellikleri şu şekilde geliştirilebilir:
 
-Mikro hizmetlerin ve web tabanlı arayüzlerin yaygınlaşmasıyla birlikte, API'ler (Uygulama Programlama Arayüzleri) sofistike saldırılar için birincil hedef haline gelmiştir.24 API'ler, modern dijital hizmetlerin omurgasını oluşturmasına rağmen, genellikle kötü bir şekilde güvence altına alınmıştır ve SQL enjeksiyonu, XSS ve bozuk kimlik doğrulama gibi saldırılara karşı savunmasızdır.24 Bulut dağıtımlarında bilinen bir güvenlik açığıdır.3
+- **Donanım Hızlandırma:** DPDK ile yüksek hızlı tarama sağlanabilir.  
+- **AI Entegrasyonu:** Anomali tespiti için yapay zeka modülleri eklenebilir.  
+- **Bulut ve IoT Desteği:** Bulut-native ve IoT odaklı tarama motorları geliştirilebilir.  
+- **Sıfır Güven:** Sürekli izleme ve doğrulama modülleri eklenebilir.  
+- **Tehdit İstihbaratı:** Gerçek zamanlı CVE ve tehdit verisi entegre edilebilir.
 
-API güvenlik taraması, API uç noktalarını güvenlik açıkları için proaktif olarak test etmeyi içerirken, "gölge API keşfi", saldırganlar için arka kapı görevi görebilecek belgelenmemiş veya unutulmuş API'leri belirlemeye odaklanır.29 Pynt ve Salt Security gibi özel API güvenlik çözümleri, gerçek dünya saldırı senaryolarını simüle etmek için YZ destekli, bağlama duyarlı Dinamik Uygulama Güvenlik Testi (DAST) kullanmaktadır.29 Bu araçlar, manuel testlerin yerini alarak sürekli, CI/CD entegre taramalar sunar.29 Ayrıca, tüm API'leri (gölge ve belgelenmemiş olanlar dahil) bulut ortamlarında otomatik olarak keşfeder ve sınıflandırır.29 API'lerin birbirine bağlılığı nedeniyle, bir API'deki bir ihlal domino etkisi yaratabilir.30 ScanMatrix'in, API keşfi, YZ destekli API güvenlik açığı taraması ve API'ye özgü tehdit istihbaratı yeteneklerini genişletmesi gerekmektedir. Bu, ScanMatrix'in uygulama katmanındaki potansiyel saldırı vektörlerini belirlemesini ve ağın genel güvenlik duruşunu güçlendirmesini sağlayacaktır.
+---
 
-### **9\. Tedarik Zinciri Güvenlik Açıkları ve Etkileri**
+## Sonuç
 
-2025 yılında, tedarik zinciri saldırıları, kuruluşlar için en yıkıcı tehditlerden biri olarak öne çıkmaktadır.31 Siber suçlular, iyi savunulan hedeflere doğrudan saldırmak yerine, güvenilir üçüncü tarafların (yazılım satıcıları, BT sağlayıcıları veya donanım üreticileri gibi) daha zayıf güvenliklerini istismar ederek bir kuruluşa sızmaktadır.31 Bu saldırılar, açık kaynak platformlara, üçüncü taraf satıcılara ve API'lere artan bağımlılık ile tedarik zincirindeki zayıf güvenlik uygulamaları nedeniyle artmaktadır.32
-
-Tedarik zinciri saldırıları, tek bir tehlikeye atılmış satıcının yüzlerce veya binlerce aşağı akış müşterisini etkileyebilecek geniş kapsamlı sonuçlara yol açabilir.31 2025'te yürürlüğe giren yeni düzenlemeler, kuruluşları üçüncü taraf ihlallerinden doğrudan sorumlu tutmakta, bu da tedarik zincirinin güvence altına alınmamasının maliyetli para cezalarına ve itibar kaybına yol açabileceği anlamına gelmektedir.31 Savunma stratejileri, tüm üçüncü taraf satıcıların ve yazılım bağımlılıklarının haritalandırılmasını, katı satıcı değerlendirmelerini, en az ayrıcalık erişimini ve sürekli izlemeyi içerir.31 ScanMatrix'in, tedarik zinciri riskini değerlendirmek için dışarıdan taramalar, anketler ve doğrudan kanıtlar gibi çeşitli kaynaklardan gelen verileri birleştirmesi gerekmektedir.3 Bu, ScanMatrix'in ağdaki üçüncü taraf bileşenlerinden kaynaklanan potansiyel güvenlik açıklarını belirlemesini ve sistem güvenilirliği değerlendirmesine tedarik zinciri riskini dahil etmesini sağlayacaktır.
-
-### **10\. Sıfır Gün (Zero-Day) İstismarları ve Gelişmiş Kalıcı Tehditler (APT'ler)**
-
-Sıfır gün istismarları, daha önce bilinmeyen güvenlik açıklarını hedef alan saldırılar olup, 2025'te ciddi aksaklıklar yaratmaya devam edecektir.3 YZ'nin artan yetenekleri, tehdit aktörlerinin karmaşık saldırı vektörlerini otomatikleştirmesine ve güvenlik açıklarını büyük ölçekte avlamasına olanak tanımaktadır.3 Üretken YZ (GenAI), sağlam arama yetenekleri sayesinde saldırganlar tarafından yeni sıfır günler ve yamalanmamış CVE'leri keşfetmek için kullanılacaktır.3 Ulus devletler, hacktivistler ve Gelişmiş Kalıcı Tehdit (APT) grupları, kendi saldırıları için sıfır günleri kullanmaya veya istismarları karaborsada satmaya devam edecektir.3
-
-Bu durum, daha az deneyimli saldırganlar için bile bu istismarları erişilebilir hale getirebilir ve genel tehdit seviyesini artırabilir.3 Örneğin, 2025'in ilk çeyreğinde Ivanti Endpoint Manager Mobile (EPMM) gibi ürünlerde kimlik doğrulama atlatma ve kod enjeksiyonu güvenlik açıkları aktif olarak istismar edilmiştir.33 Bu tür güvenlik açıkları, uzaktan kimlik doğrulaması yapılmamış saldırganların cihazda rastgele kod çalıştırmasına olanak tanıyabilir.34 Kuruluşların, tehdit aktörü faaliyetlerinin ve Taktik, Teknik ve Prosedürlerinin (TTP'ler) gerçek zamanlı izlenmesini uygulayarak ve güvenlik açığı ciddiyetine, yaşına, istismar edilebilirliğine ve iş etkisine göre risk senaryolarını önceliklendirerek proaktif savunma stratejileri geliştirmesi gerekmektedir.3 ScanMatrix'in, YZ destekli güvenlik açığı avlama yeteneklerini entegre etmesi ve bilinen istismar edilen güvenlik açıkları kataloğunu (CISA'nınki gibi) sürekli olarak taraması gerekmektedir.33 Bu, ScanMatrix'in potansiyel sıfır gün tehditlerini belirlemesine ve sistem güvenilirliği derecelendirmesine bu tür tehditlerin riskini dahil etmesine yardımcı olacaktır.
-
-## **Sonuçlar ve Öneriler**
-
-2025 yılı için ağ güvenliği ortamı, YZ'nin hem saldırgan hem de savunma tarafında artan kullanımıyla birlikte dinamik ve karmaşık bir yapı sergilemektedir. Host tarama, güvenlik duvarı tespiti, MAC adresi belirleme ve güvenlik duvarı atlatma teknikleri alanındaki gelişmeler, ağ güvenliği araçlarının sürekli adaptasyonunu ve gelişimini zorunlu kılmaktadır.
-
-ScanMatrix gibi bir ağ güvenliği aracı için bu trendlerden çıkarılabilecek temel sonuçlar ve öneriler şunlardır:
-
-1. **Yapay Zeka Entegrasyonunun Derinleştirilmesi:** ScanMatrix, mevcut yeteneklerini YZ ve ML ile güçlendirmelidir. Bu, sadece açık port tarama ve sistem bilgisi toplama gibi mevcut özelliklerin etkinliğini artırmakla kalmayacak, aynı zamanda YZ destekli davranışsal analiz ile ağ trafiğindeki anormallikleri ve gizli keşif girişimlerini çok daha hassas bir şekilde tespit etmesini sağlayacaktır. YZ destekli güvenlik açığı avlama ve risk önceliklendirme, aracın proaktif tehdit tespit yeteneklerini önemli ölçüde geliştirecektir.  
-2. **Kapsamlı Saldırı Yüzeyi Yönetimine Geçiş:** ScanMatrix, geleneksel ağ taramasının ötesine geçerek kapsamlı bir saldırı yüzeyi yönetim platformuna dönüşmelidir. Bu, bulut ortamlarındaki yanlış yapılandırmaların (CSPM entegrasyonu), IoT cihazlarının güvenlik açıklarının ve gölge API'lerin sürekli keşfi ve değerlendirilmesini içermelidir. Aracın "düşük, orta, yüksek, kritik" güvenlik güvenilirliği derecelendirmesi, bu genişletilmiş saldırı yüzeyi değerlendirmesini yansıtacak şekilde geliştirilmelidir.  
-3. **Gelişmiş Tespit ve Kaçınma Mekanizmalarının Geliştirilmesi:** Güvenlik duvarı atlatma ve gizli tarama tekniklerinin evrimi göz önüne alındığında, ScanMatrix'in derin paket denetimi, protokol manipülasyonu tespiti ve davranışsal analiz yeteneklerini geliştirmesi kritik öneme sahiptir. Aynı zamanda, etik hackleme senaryoları için gizli tarama tekniklerini (SYN, Idle, parçalama, decoy taramaları) simüle etme yeteneği, aracın test ve değerlendirme kabiliyetini artıracaktır.  
-4. **MAC Adresi Tespiti ve Parmak İzi Çıkarma Doğruluğunun Artırılması:** MAC adresi tespiti, yalnızca OUI tabanlı tanımlamanın ötesine geçerek cihaz parmak izi verilerini (TCP/IP yığını farklılıkları, saat kayması, Wi-Fi prob istekleri) ve MAC adresi kullanım istatistiklerini birleştirmelidir. Bu, MAC adresi sahtekarlığı gibi saldırıları daha doğru bir şekilde tespit etmeye ve yanlış pozitifleri azaltmaya yardımcı olacaktır.  
-5. **Gerçek Zamanlı İzleme ve Uyarı Sisteminin İyileştirilmesi:** ScanMatrix'in gerçek zamanlı izleme ve uyarı sistemi, YZ ve ML'den elde edilen derinlemesine analizlerle beslenmelidir. Bu, ağ trafiğindeki ince anormallikleri ve potansiyel tehditleri daha hızlı ve daha doğru bir şekilde belirlemesini sağlayacak, böylece kuruluşların proaktif bir şekilde yanıt vermesine olanak tanıyacaktır.
-
-Bu trendlerin entegrasyonu ve sürekli geliştirilmesi, ScanMatrix'i 2025 ve sonrasında ağ güvenliği analizi için vazgeçilmez bir araç haline getirecektir.
+Bu teknikler, 2025 yılında ağ güvenliği ve host tarama alanında öncü olacaktır. ScanMatrix, bu trendleri benimseyerek hem profesyonel kullanıcılar hem de siber güvenlik öğrencileri için daha güçlü ve esnek bir platform haline gelebilir. Ancak, bu tekniklerin **etik kullanım** çerçevesinde ve **yasal düzenlemelere uygun** olarak uygulanması büyük önem taşır.
 
 #### **Alıntılanan çalışmalar**
 
