@@ -1,1 +1,10 @@
-requests
+scapy==2.5.0
+python-nmap==0.7.1
+requests==2.32.3
+netifaces==0.11.0
+networkx==3.3
+matplotlib==3.9.2
+colorama==0.4.6
+Jinja2==3.1.4
+progressbar2==4.5.0
+ipaddress==1.0.23
