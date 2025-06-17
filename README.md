@@ -14,40 +14,87 @@ Python tabanlı ağ güvenliği aracı, ağ tarama ve analiz süreçlerini otoma
 
 ## Features / Özellikler
 
-- *Feature 1:*  Host Keşfi
--  *Özellik 1: *ARP Taraması: Scapy ile IP/MAC/vendor, stealth mod, ~1-2 sn.
-  Nmap Ping: Nmap -sn ile host/MAC, ~4-6 sn.
-  Sıralı Çıktı: IP’ler artan sırayla..*
-- *Feature 2:*  Port Taraması  
-  *Özellik 2: TCP SYN: Scapy, 15 port/grup, timeout 0.08/0.03 sn, ~0.4-3 sn.
-  Atlamasız: Retry=2 ile eksik port tarama.
-Sıralı: IP/port artan sırayla.*
-- *Feature 3:* Servis ve OS Tespiti.  
-  *Özellik 3: Nmap Taraması: -sV (servis), -O (OS), proxy, ~3-5 sn.
-  Veri İşleme: Servis/OS bilgisi, hata kontrolü.
-  Sıralı: IP/port/OS sıralı.
-- *Feature 4:*  Zafiyet Taraması
-- *Özellik 4:  Nmap NSE: CVE tespiti, ~5-10 sn.
-  Çıktı: Kırmızı tablo, CSV/HTML/JSON.
-  Hata Önleme: NSE hata yakalama.  
-- *Feature 5:*  Vendor Bilgileri 
-- *Özellik 5: API: macvendors.com ile vendor, ~0.1 sn.
-  Hata Yedekleme: Hata durumunda "Unknown".
-- *Feature 6:*  Çıktı ve Raporlama
-- *Özellik 6: Terminal: Yeşil/sarı bilgi, kırmızı zafiyet, cyan başlık.
-    JSON: Dosyaya yazılır (hosts, ports, vuln).
-    CSV: Host/port/OS/vuln için ayrı dosyalar.
-    HTML: Jinja2 ile biçimli rapor.
-    Topoloji: NetworkX ile PNG, ~0.5 sn.
-- *Feature 7:*  Güvenlik ve Gizlilik
-- *Özellik 7:Stealth Modu: Sahte MAC ile gizlilik.
-  Proxy: Nmap için proxy desteği.
-  Loglama: Hatalar network_scanner.log’a.
-- *Feature 8:* Hata Önleme ve Stabilite
-- *Özellik 8: Hata Yakalama: Tarama/API için try-except.
-  Nmap Kontrolü: Veri tipi hataları önleme.
-  İlerleme Çubuğu: Progressbar ile takip
 
+
+## Özellik 1: ARP Tabanlı Host Keşfi
+- **Açıklama**: Scapy ile hedef ağda ARP taraması yaparak aktif cihazların IP, MAC adresleri ve üretici (vendor) bilgileri toplanır. Tarama süresi yaklaşık 1-2 saniye.
+- **Detaylar**: Broadcast çerçeveleri ile tüm ağ taranır, stealth modda MAC spoofing kullanılır.
+
+## Özellik 2: Nmap Ping Tabanlı Host Keşfi
+- **Açıklama**: Nmap’in `-sn` parametresiyle ping taraması yapılarak hostların IP ve MAC adresleri tespit edilir. Tarama süresi yaklaşık 4-6 saniye.
+- **Detaylar**: MAC adresi bilinmeyen cihazlar için ek üretici sorgusu yapılır.
+
+## Özellik 3: Host Sonuçlarının Birleştirilmesi
+- **Açıklama**: ARP ve Nmap taramalarından gelen host bilgileri birleştirilir, çakışmalar giderilir ve IP’ler artan sırayla (ipaddress modülü) sıralanır.
+- **Detaylar**: Çıktılar, IP, MAC ve üretici bilgileriyle konsolda renkli olarak gösterilir.
+
+## Özellik 4: Hızlı TCP Port Taraması
+- **Açıklama**: Scapy ile hedef IP’lerde SYN taraması yapılır, belirtilen port aralığında (varsayılan 0-65535) açık portlar tespit edilir.
+- **Detaylar**: 15’li port gruplarıyla tarama, rasgele kaynak portlar, 0.08 saniye zaman aşımı ve 2 tekrar deneme.
+
+## Özellik 5: Eksik Port Yeniden Taraması
+- **Açıklama**: İlk taramada yanıt alınamayan portlar için ek SYN taraması yapılır, doğruluk artırılır.
+- **Detaylar**: 0.03 saniye zaman aşımıyla eksik portlar tekrar kontrol edilir.
+
+## Özellik 6: Kullanıcı Tanımlı Tarama Hızı
+- **Açıklama**: `--rate` parametresiyle tarama hızı (varsayılan 100 paket/saniye) ayarlanabilir, performans optimize edilir.
+- **Detaylar**: ThreadPoolExecutor ile 50 iş parçacığı kullanılarak paralel tarama.
+
+## Özellik 7: Nmap Versiyon Taraması
+- **Açıklama**: Açık portlar için Nmap ile `-sS -sV` kullanılarak servis, ürün ve versiyon bilgileri toplanır.
+- **Detaylar**: `--version-intensity 1` ile hafif tarama, hızlı sonuçlar.
+
+## Özellik 8: İşletim Sistemi Tespiti
+- **Açıklama**: Nmap’in `-O` parametresiyle cihazların işletim sistemi bilgileri (ad, doğruluk, üretici, aile, nesil) tespit edilir.
+- **Detaylar**: Her cihaz için osmatch verileri ayrı ayrı işlenir.
+
+## Özellik 9: Zafiyet Taraması
+- **Açıklama**: Nmap’in `vuln` betiği ile açık portlarda zafiyetler aranır, CVE, exploit ve zayıf yapılandırmalar filtrelenir.
+- **Detaylar**: Betik çıktıları 200 karaktere kadar konsolda gösterilir.
+
+## Özellik 10: NVD CVE Sorgusu
+- **Açıklama**: Tespit edilen yazılım ve versiyonlar için NVD API ile CVE sorguları yapılır, en fazla 5 sonuç döndürülür.
+- **Detaylar**: API anahtarıyla 50 sonuç sınırı, 0.2 saniye gecikme, önbellekleme ile performans artışı.
+
+## Özellik 11: Proxy Desteği
+- **Açıklama**: `--proxies` ile kullanıcı tanımlı proxy listesi üzerinden Nmap taramaları yapılabilir.
+- **Detaylar**: Proxy seçimi rasgele yapılır, gizlilik artırılır.
+
+## Özellik 12: Stealth Modu
+- **Açıklama**: `--stealth` ile MAC spoofing ve IP fragmantasyonu kullanılarak gizli tarama yapılır.
+- **Detaylar**: Tespit edilme riskini azaltmak için rasgele MAC adresleri üretilir.
+
+## Özellik 13: JSON Çıktı Kaydetme
+- **Açıklama**: Tarama sonuçları (hostlar, portlar, versiyon, işletim sistemi, zafiyetler) JSON formatında kaydedilir.
+- **Detaylar**: Zaman damgasıyla dosya adı, tüm sonuçlar tek dosyada.
+
+## Özellik 14: CSV Çıktı Kaydetme
+- **Açıklama**: Sonuçlar ayrı CSV dosyalarına (hostlar, portlar, nmap portları, işletim sistemleri, zafiyetler) kaydedilir.
+- **Detaylar**: Her dosya için uygun sütun başlıkları, zaman damgası ile adlandırma.
+
+## Özellik 15: HTML Rapor Oluşturma
+- **Açıklama**: Jinja2 ile dinamik HTML raporu oluşturulur, sonuçlar tablo formatında sunulur.
+- **Detaylar**: CSS ile stilize edilmiş, okunabilir rapor; hedef, tarama zamanı ve tüm sonuçlar içerir.
+
+## Özellik 16: Ağ Topolojisi Görselleştirme
+- **Açıklama**: NetworkX ve Matplotlib ile ağ topolojisi grafiği çizilir, scanner ile cihazlar arasındaki bağlantılar gösterilir.
+- **Detaylar**: Açık portlar etiketlenir, PNG formatında kaydedilir.
+
+## Özellik 17: Tkinter GUI Desteği
+- **Açıklama**: Kullanıcı dostu GUI ile hedef IP, port aralığı, stealth ve verbose seçenekleri girilebilir.
+- **Detaylar**: Gerçek zamanlı durum güncellemeleri, tarama tamamlandığında bildirim.
+
+## Özellik 18: Kapsamlı Loglama
+- **Açıklama**: Logging modülü ile INFO, WARNING, ERROR logları konsola ve `network_scanner.log` dosyasına yazılır.
+- **Detaylar**: Colorama ile renkli konsol çıktıları, hata ayıklama için verbose modu.
+
+## Özellik 19: Komut Satırı Esnekliği
+- **Açıklama**: Argparse ile hedef IP (`-t`), portlar (`--ports`), hız (`--rate`), proxy (`--proxies`), çıktı (`--output`), verbose (`-v`), stealth (`-s`) ve GUI (`--gui`) desteklenir.
+- **Detaylar**: Kullanıcı ihtiyaçlarına göre özelleştirilebilir.
+
+## Özellik 20: Kesinti ve Hata Yönetimi
+- **Açıklama**: KeyboardInterrupt ile tarama kesildiğinde kısmi sonuçlar kaydedilir, tüm adımlarda hata yakalama yapılır.
+- **Detaylar**: Thread-safe işlemler için Lock kullanımı, sağlamlık artırılır.
 
 
 ---
