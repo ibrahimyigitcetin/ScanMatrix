@@ -45,7 +45,7 @@ def search_cve(software: str, version: str) -> List[Dict]:
     """
     NVD API üzerinden yazılım ve versiyon için CVE sorgusu yapar.
     """
-    api_key = "64328447-7604-4b94-95c8-793b716407b1"
+    api_key = "#APIKEY"
     url = "https://services.nvd.nist.gov/rest/json/cves/2.0"
     software_clean = software.lower().replace(' ', '').replace('-', '')
     # Versiyonu ana sürüm için sadeleştir (örn. 4.7p1 -> 4.7)
