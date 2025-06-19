@@ -129,7 +129,7 @@ See our plans in [ROADMAP.md](ROADMAP.md).
 
 1. **Clone the Repository / *Depoyu Klonlayın***:  
    ```bash
-   [git clone https://github.com/samethankull/ScanMatrix.git]
+   [git clone https://github.com/ibrahimyigitcetin/ScanMatrix.git]
    cd ScanMatrix
    ```
 
@@ -212,7 +212,7 @@ Tarayıcı, aşağıdaki aşamaları gerçekleştirir:
 
 We welcome contributions! To help:  
 1. Fork the repository.  
-2. Clone your fork (`git clone git@github.com:YOUR_USERNAME/YOUR_REPO.git`).  
+2. Clone your fork (`git clone git@github.com:ibrahimyigitcetin/ScanMatrix.git`).  
 3. Create a branch (`git checkout -b feature/your-feature`).  
 4. Commit changes with clear messages.  
 5. Push to your fork (`git push origin feature/your-feature`).  
