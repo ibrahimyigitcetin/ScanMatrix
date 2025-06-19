@@ -254,5 +254,3 @@ Found a bug? Open an issue.
 *Proje Sorumlusu: [Samethan Kül] - [samehan.kul@istinye.edu.tr]. Hata bulursanız bir sorun bildirin.*
 
 ---
-
-*Replace placeholders (e.g., YOUR_USERNAME/YOUR_REPO) with your project details.*
