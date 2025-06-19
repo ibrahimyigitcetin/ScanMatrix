@@ -30,7 +30,7 @@
 
 ## Özellik 4: Hızlı TCP Port Taraması
 - **Açıklama**: Scapy ile hedef IP’lerde SYN taraması yapılır, belirtilen port aralığında (varsayılan 0-65535) açık portlar tespit edilir.
-- **Detaylar**: 15’li port gruplarıyla tarama, rasgele kaynak portlar, 0.08 saniye zaman aşımı ve 2 tekrar deneme.
+- **Detaylar**: 15’li port gruplarıyla tarama, rastgele kaynak portlar, 0.08 saniye zaman aşımı ve 2 tekrar deneme.
 
 ## Özellik 5: Eksik Port Yeniden Taraması
 - **Açıklama**: İlk taramada yanıt alınamayan portlar için ek SYN taraması yapılır, doğruluk artırılır.
@@ -62,7 +62,7 @@
 
 ## Özellik 12: Stealth Modu
 - **Açıklama**: `--stealth` ile MAC spoofing ve IP fragmantasyonu kullanılarak gizli tarama yapılır.
-- **Detaylar**: Tespit edilme riskini azaltmak için rasgele MAC adresleri üretilir.
+- **Detaylar**: Tespit edilme riskini azaltmak için rastgele MAC adresleri üretilir.
 
 ## Özellik 13: JSON Çıktı Kaydetme
 - **Açıklama**: Tarama sonuçları (hostlar, portlar, versiyon, işletim sistemi, zafiyetler) JSON formatında kaydedilir.
